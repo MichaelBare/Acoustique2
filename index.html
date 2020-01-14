@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+		<link rel="stylesheet" href="css/theme/custom-gc.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="ressources/intro.gif">
+					<h1> <font color="white"> Acoustique - partie 2</font></h1>
+				</section>
+				<section>
+					<p> Dans cette seconde partie, nous allons commencer par associer les <b>caractéristiques physiologiques</b> d'un son (c'est-à-dire celle que l'on utilise au jour le jour pour définir un son précis) aux <b>caractéristiques physiques</b> que nous avons définies au cours.</p>
+				</section>
+
+				<section>
+					<hrem> 
+					AVERTISSEMENT !
+					</hrem>
+					<rem>
+						<div align="left">
+						Il vous est vivement conseillé de ne pas mettre le volume sonore de votre ordinateur au maximum. Certains sons diffusés peuvent être intenses. Il est donc primordial de protéger votre ouïe de sons accidentellement trop forts !
+						</div>
+					</rem>
+				</section>	
+
+				<section id="définitions" data-state="Normal">
+					<p> Pour fixer correctement les idées, précisons ce que sont ces caractéristiques <b> physiologiques</b> :</p>
+					<p class="fragment fade-left" data-fragment-index="1"> <u><b> Intensité :</u></b> Quantité perçue de son.</p>
+					<p class="fragment fade-left" data-fragment-index="2"> <u><b> Hauteur : </u></b> Caractéristique liée au fait qu'un son soit gravre ou aigu.</p>
+					<p class="fragment fade-left" data-fragment-index="3"><u><b>Timbre : </u></b>Qualité particulière d'un son, indépendante de l'intensité ou de la hauteur, caractéristique d'un instrument.</p>
+				</section>
+				<section>
+					<p>L'application présente dans le panneau suivant est un synthétiseur rudimentaire dont les paramètres <b> physiques</b> peuvent être modifiés comme vous l'entendez ...</p>
+					<p data-fragment-index="1">L'amplitude de l'onde sonore, la forme de l'onde sont manipulables à l'aide d'une glissière alors que la fréquence est exploitable via le clavier représenté en bas de panneau.</p>
+				</section>
+				<section> 
+					<div class="fig-container no-margin-top" data-file="ressources/synthé/index.html"></div>
+				</section>
+				<section id="caractéristiques" data-state="question1">
+					<p>OK ? Vous avez pu exercer vos talents (en monophonique, une seule note était jouable à la fois !) ? Vous pouvez maintenant associer aisément les caractéristiques physiques (numérotées de 1 à 3) aux les caractéristiques physiologiques correspondantes!</p>
+					<div class="row no-margin-top">
+						<div class="col-50">
+							<p> 1. L'amplitude </p>
+							<p> 2. La fréquence </p>
+							<p> 3. La forme de l'onde </p>
+						</div>
+						<div class="col-50">
+							<form id="q1">
+								<p>Timbre : <input id="r1c" type="text" name="fname1"></p>
+								<p>Intensité : <input id="r1a" type="text" name="fname2"></p>
+								<p>Hauteur : <input id="r1b" type="text" name="fname3"></p>
+								<input type="button" onclick="checkQuestion1()" value="Valider">
+							</form>
+						</div>
+					</div>
+					<div id = Ok1 style = "visibility:hidden">
+						<p> <font color="green">La réponse est correcte ! Passez au paneau suivant !</font></p>
+					</div>
+					<div id = "Ko1" style = "visibility:hidden">
+						<p> <font color="red"><a href="#/définitions" >  Cette réponse est fausse ! Revenez éventuellement aux définitions et à l'application ...</a></font></p>
+					</div>
+					
+				</section>
+
+				<section>
+					<h2> Intensité : Un pas plus loin ...</h2>
+					
+				</section>
+				
+				<!-- Voic les sections dédiées à l'intensité sonore -->
+				<section>
+					<p >Comme cela a été dit en introduction à l'acoustique (partie 1), la variation de pression due à la perturbation sonore est très faible vis-à-vis de la pression atmosphérique : Un son très intense présentera une pression acoustique de moins de 10 Pa alors qu'une musique douce correspondra à 0,0002 Pa.</p>
+					<p class="fragment" data-fragment-index="1"> Comme toute onde, le son est une propagation d'énergie dont la cadence d'émission est une <b> puissance </b>. </p>
+					<p class="fragment" data-fragment-index="2">Une personne en conversation normale émettra 10<sup>-5</sup> W alors qu'un cri sera d'une puissance de 10<sup>-3</sup> W.</p>
+				</section>
+				
+				<section>
+					<div class="row no-margin-top">
+						<div class="col-50">
+						<h4> L'onde sonore</h4>
+						<p style="font-size:24px" >Un son est une onde sphérique. Ceci signifie que l'énergie, émise d'une source, va se propager dans toutes les directions de l'espace en se distribuant sur la surface d'une sphère grandissant de plus en plus puisque le son se propage.<p>
+						<p style="font-size:24px" class="fragment" data-fragment-index="2"> Nous définirons donc <b>l'intensité sonore I</b> comme étant la quantité de puissance sonore par unité de surface :
+					$$ I = \frac{P}{S} [ \frac{W}{m²} ] $$ </p>
+						<p style="font-size:24px" class="fragment" data-fragment-index="3"> Evidement, comme la surface d'une sphère vaut \( 4 \pi r^2 \), l'intensité sera inversément proportionnelle au carré de la distance de la source. Donc, l'intensité perçue d'une source sera 4 fois moins grande à 2 m qu'à 1 m d'elle... </p>
+						</div>
+						<div class="col-50">
+							<image class="fragment" data-fragment-index="1" src="ressources/Son3D.gif">
+						</div>
+					</div>
+					<p></p>
+					<p> 
+				</section>
+				<section>
+				<div class="row no-margin-top">
+						<div class="col-50">
+						<p style="font-size:24px">  Vous pouvez tenter de mettre en évidence cete dépendance à la distance.</p>
+						<p style="font-size:24px" class="fragment" data-fragment-index="1">  A droite de l'écran, vous allez voir apparaître une application simple mesurant l'intensité perçue par le microphone interne de l'ordinateur. Une jauge (imprécise) vous donne une indication visuelle de l'intensité alors que sa valeur plus précise est affichée à côté.</p>
+						<p style="font-size:24px" class="fragment" data-fragment-index="2">  Utilisez une source sonore dont vous maîtrisez l'intensité (un diapason mis à disposition ou un sifflement, un claquement de main) et que vous pouvez déplacer ...mettez-vous à 50 cm, 1 m, 2 m,... et essayez de mettre le lien à la distance en évidence!</p>
+						</div>
+						<div class="col-50 fragment fig-container no-margin-top" data-file="ressources/intensité/index.html" data-fragment-index="2"></div>
+					</div>
+				</section>
+
+				<section>
+					<p>Notre oreille supporte des intensités allant jusqu'à 1 W/m², ce qui représente le seuil de douleur pour nous. A l'autre extrême, notre oreille peut détecter une pression acoustique de 10<sup>-5</sup> Pa, ou 10<sup>-12</sup> W/m². </p>
+					<p class="fragment" data-fragment-index="1"> Notre oreille est d'ailleurs bien plus performante que notre oeil pusiqu'une sensibilité aussi vaste nous permettrait de voir un stade dans son ensemble et en même temps un atome composant un brin d'herbe sur le gazon central !</p>
+				</section>
+
+				<section>
+					<p> Lorsque notre oreille perçoit deux sons différents, elle ne compare pas les intensités par leur différence, mais par leurs rapports. </p>
+					<p class="fragment" data-fragment-index="1"> <b> Multiplier une intensité par 10 ne représente qu'une perception multipliée par 2 !</b></p>
+					<p class="fragment" data-fragment-index="2"> En réalité, ceci traduit un comportement <q> logarithmique</q> puisqu'une multiplication par une puissance de 10 revient à augmenter la sensation par addition<p>
+					<p class="fragment" data-fragment-index="3"> Nous en arrivons à la défintion même du <q>niveau sonore</q> :</p>
+					<p class="fragment" data-fragment-index="4">$$ n = 10.log_{10} \big( \frac{I}{10^{-12}} \big) [dB] $$ </p>
+					
+				</section>
+				<section data-state="question3">
+					<p> Afin de saisir ces concepts de puissance sonore, de dépendance à la distance et de niveau sonore, je vous propose quelques exercices ...<p>
+					<p>1. Lors d'un festival, les organisateurs poussent la sono et la règlent de manière à émettre une puissance brute de 1 Watt.<p>
+						<p>Déterminez la puissance sonore (en W/m²) à 1 mètre d'un haut-parleur.</p>
+						<form id="q3">
+							<p>Votre réponse : <input id="r3" type="text" name="fname"> W/m²</p>
+							<input type="button" onclick="checkQuestion3()" value="Valider">
+						</form>
+						<div id = Ok3 style = "visibility:hidden">
+							<p ><font color="green"> La réponse est correcte ! Passez au paneau suivant !</font></p>
+						</div>
+						<div id = "Ko3" style = "visibility:hidden">
+							<p> <font color="red">Cette réponse est fausse ! Je vous rappelle que cette puissance se <q> dilue </q> sur l'aire du'une sphère dès qu'elle s'éloigne de sa source ...</font></p>
+						</div>
+					</section>
+				<section data-state="question4">
+					<p>2. Toujours pendant ce festival, déterminez le niveau sonore à cette distance de 1 mètre. Vous pouvez arrondir votre réponse à l'unité !<p>
+						
+						<form id="q4">
+							<p>Votre réponse : <input id="r4a" type="text" name="fname1"> Unité : <input id="r4b" type="text" name="fname2"></p>
+							<input type="button" onclick="checkQuestion4()" value="Valider">
+						</form>
+						<div id = Ok4 style = "visibility:hidden">
+							<p > <font color="green">La réponse est correcte ! Passez au paneau suivant !</font></p>
+						</div>
+						<div id = "Ko4" style = "visibility:hidden">
+							<p> <font color="red">Cette réponse est fausse ! Vérifiez votre unité et n'oubliez pas d'utilisez la défintion du <b> niveau sonore</b></font></p>
+						</div>
+				</section>
+				<section data-state="question5">
+					<p>3. Les normes sont strictes ! En Wallonie, des niveaux moyens de <b>85 dB</b> sont autorisés au maximum lors d'évènements publiques. Déterminez à quelle distance minimale théorique peut se trouver le publique de la sono évoquée depuis le début de l'exercice. <p>
+						
+						<form id="q5">
+							<p>Votre réponse : <input id="r5a" type="text" name="fname1"> Unité : <input id="r5b" type="text" name="fname2"></p>
+							<input type="button" onclick="checkQuestion5()" value="Valider">
+						</form>
+						<div id = Ok5 style = "visibility:hidden">
+							<p > <font color="green">La réponse est correcte ! Passez au paneau suivant !</font></p>
+						</div>
+						<div id = "Ko5" style = "visibility:hidden">
+							<p> <font color="red"> Cette réponse est fausse ! Vous devez prendre le problème à l'envers : Déterminez la puissance sonore I nécessaire et déterminez ensuite le rayon de la sphère portant cette intensité ...</font></p>
+						</div>
+				</section>
+				<section>
+					<h4> Echelle des niveaux sonores</h4>
+					<p> On peut classer les différents phénomènes sonores en fonction du niveau sonore moyen qu'ils développent. En voici quelques uns :</p>
+					<div  data-svg-fragment="ressources/niveaux.svg#[*|label=base]" height="50%">
+						  		<a class="fragment grow" title="[*|label=fragment1]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment2]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment3]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment4]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment5]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment6]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment7]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment8]"></a>
+								<a class="fragment fade-up" title="[*|label=fragment9]"></a>
+							</div>
+				</section>
+
+				<section>
+					<h2> Hauteur : Un pas plus loin ...</h2>
+					
+				</section>
+				
+				<!-- Voic les sections dédiées à la hauteur -->
+				<section>
+					<p> Notre oreille n'est pas sensible qu'à l'intensité mais aussi à la fréquence. Pour vous en rendre compte, rendez-vous au panneau suivant afin de tester votre sensibilité à la hauteur d'un son. Cliquez ou touchez le bandeau gris et glissez de gauche à droite ... entendez-vous à toutes les fréquences ? Certaines fréquences sont-elles plus <i>difficilement</i> supportables ? </p>
+					<p data-fragment-index="1"> <font color="red">Attention ! Je vous déconseille d'augmenter exagérément le volume de l'ordinateur pour mieux entendre ... cela pourrait être douloureux pour vos oreilles !</font></p>
+				</section>
+				<section> 
+					<div class="fig-container no-margin-top" data-file="ressources/audiofréquence/index.html"></div>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.1.7/d3.min.js"></script>
+
+		<script>
+			//Cette série de scripts permet de vérifier les réponses du quizz posé.
+
+			q1visited = false;
+			q2visited = false;
+			q3visited = false;
+			q4visited = false;
+			q5visited = false;
+
+			function toggleNav(b) {
+				Reveal.configure({
+					controls: b,
+					progress: b,
+					keyboard: b,
+					overview: b,
+					touch: b
+				});
+			}
+
+
+			Reveal.addEventListener('question1', function(event) {
+				if(q1visited){
+					toggleNav(checkQuestion1());
+				} else {
+					toggleNav(false);
+				}
+			});
+
+
+			function checkQuestion1() {
+				console.log("Visité ? " + q1visited);
+				var x1 = document.getElementById("r1a").value;
+				var x2 = document.getElementById("r1b").value;
+				var x3 = document.getElementById("r1c").value;
+				console.log('Réponse :'+x1+" - "+x2+" - "+x3);
+				q1visited = true;
+  				if ((x1 == 1)&&(x2 == 2)&&(x3 == 3)) {
+					console.log("Valide !");
+					toggleNav(true);
+					document.getElementById("Ok1").style.visibility = "visible";
+					document.getElementById("Ko1").style.visibility = "hidden";
+					return(true);
+  				} else {
+					console.log("Ne marche pas!");
+					document.getElementById("Ko1").style.visibility = "visible";
+					q1visited = false;
+					return false;
+				}
+				q1visited = true;
+			}
+
+			Reveal.addEventListener('question2', function(event) {
+				toggleNav(checkQuestion2());
+			});
+
+			function checkQuestion2() {
+				var x = document.getElementById("r2").value;
+				console.log('x vaut :'+x);
+  				if ((x > 0)&&(x<10)) {
+					console.log("Valide !");
+					toggleNav(true);
+					return(true);
+  				} else {
+					console.log("Ne marche pas avec : " + x);
+					return false;
+				}
+			}
+
+			Reveal.addEventListener('question3', function(event) {
+				if(q3visited){
+					toggleNav(checkQuestion3());
+				} else {
+					toggleNav(false);
+				}
+			});
+
+			function checkQuestion3() {
+				var x = document.getElementById("r3").value;
+				console.log('x vaut :'+x);
+  				if ((x > 0.079)&&(x<0.08)) {
+					console.log("Valide !");
+					toggleNav(true);
+					document.getElementById("Ok3").style.visibility = "visible";
+					document.getElementById("Ko3").style.visibility = "hidden";
+					return(true);
+  				} else {
+					console.log("Ne marche pas!");
+					document.getElementById("Ko3").style.visibility = "visible";
+					q3visited = false;
+					return false;
+				}
+				q3visited = true;
+			}
+
+			Reveal.addEventListener('question4', function(event) {
+				if(q4visited){
+					toggleNav(checkQuestion4());
+				} else {
+					toggleNav(false);
+				}
+			});
+
+			function checkQuestion4() {
+				var x1 = document.getElementById("r4a").value;
+				var x2 = document.getElementById("r4b").value;
+				console.log('Réponse :'+x1 +x2);
+  				if ((x1 == 109 )&&(x2 == "dB")) {
+					console.log("Valide !");
+					toggleNav(true);
+					document.getElementById("Ok4").style.visibility = "visible";
+					document.getElementById("Ko4").style.visibility = "hidden";
+					return(true);
+  				} else {
+					console.log("Ne marche pas!");
+					document.getElementById("Ko4").style.visibility = "visible";
+					q1visited1 = false;
+					return false;
+				}
+				q4visited = true;
+			}
+
+			Reveal.addEventListener('question5', function(event) {
+				if(q5visited){
+					toggleNav(checkQuestion5());
+				} else {
+					toggleNav(false);
+				}
+			});
+
+			function checkQuestion5() {
+				var x1 = document.getElementById("r5a").value;
+				var x2 = document.getElementById("r5b").value;
+				console.log('Réponse :'+x1 +x2);
+  				if ((x1 > 15.7)&&(x1 <15.9)&&(x2 == "m")) {
+					console.log("Valide !");
+					toggleNav(true);
+					document.getElementById("Ok5").style.visibility = "visible";
+					document.getElementById("Ko5").style.visibility = "hidden";
+					return(true);
+  				} else {
+					console.log("Ne marche pas!");
+					document.getElementById("Ko5").style.visibility = "visible";
+					q5visited = false;
+					return false;
+				}
+				q5visited = true;
+			}
+		</script>
+
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				width: "95%",
+				height: "100%",
+				margin: 0,
+				minScale: 1,
+				maxScale: 1,
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				viewDistance: 2,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				math: {
+					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/reveald3/reveald3.js' },
+					{ src: 'plugin/svg-fragments/reveal-svg-fragment.js',
+          condition: function(){
+            return !!document.querySelector( '[data-svg-fragment]' );
+          			}}
+				]
+			});
+
+			//Permet de débloquer la navigation traditionnelle sur un slide
+			//L'ajout de la propriété data-state="Normal" active cet effet
+			Reveal.addEventListener( 'Normal', function() {
+				Reveal.configure({
+				controls: true,
+				progress: true,
+				keyboard: true,
+				overview: true,
+				touch: true
+			});
+			}, false );
+		</script>
+
+	</body>
+</html>
