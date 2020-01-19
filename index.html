@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Acoustique - Partie II</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Caractéristiques d'un son">
+		<meta name="author" content="Michael Baré">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -214,7 +214,7 @@
 					
 				</section>
 				
-				<!-- Voic les sections dédiées à la hauteur -->
+				<!-- Voici les sections dédiées à la hauteur -->
 				<section>
 					<p> Notre oreille n'est pas sensible qu'à l'intensité mais aussi à la fréquence. Pour vous en rendre compte, rendez-vous au panneau suivant afin de tester votre sensibilité à la hauteur d'un son. Cliquez ou touchez le bandeau gris et glissez de gauche à droite ... entendez-vous à toutes les fréquences ? Certaines fréquences sont-elles plus <i>difficilement</i> supportables ? </p>
 					<p data-fragment-index="1"> <font color="red">Attention ! Je vous déconseille d'augmenter exagérément le volume de l'ordinateur pour mieux entendre ... cela pourrait être douloureux pour vos oreilles !</font></p>
@@ -222,6 +222,94 @@
 				<section> 
 					<div class="fig-container no-margin-top" data-file="ressources/audiofréquence/index.html"></div>
 				</section>
+                <section>
+                    <div class="row no-margin-top">
+                        <div class="col-50">
+					        <p> Une oreille saine peut entendre de 20 Hz à 20 kHz. Evidement, ce test n'a aucune valeur médicale puisque les conditions d'émission du son ne sont pas optimales (écouteurs, bruit de fond, ...)</p>
+                            <p> Il faut savoir que cette sensibilité aux fréquences se modifie en fonction de l'âge et des traitements subis par l'oreille</p>
+                        </div>
+                        <div class="col-50">
+						    <image class="fragment" data-fragment-index="1" src="ressources/Audition.jpg">
+					    </div>
+                    </div>
+				</section>
+
+                <section>
+					<h2> Timbre : Un pas plus loin ...</h2>
+					
+				</section>
+                <section>
+                    <p> Comme nous l'avons vu précédement, le timbre est lié à la forme de l'onde. Voici trois exemples :
+                    </p>
+                    <div class="row no-margin-top">
+                        <div class="col-50">
+                            <p>Son simple (diapason) : </p>
+                        </div>
+                        <div class="col-50">
+                            <image  src="ressources/sin.png">
+                            
+                        </div>
+                    </div>
+                    <div class="row no-margin-top">
+                        <div class="col-50">
+                            <p>Son complexe (piano) : </p>
+                            
+                        </div>
+
+                        <div class="col-50">
+                            <image  src="ressources/guitare.png">
+                        </div>
+                    </div>
+                    <div class="row no-margin-top">
+                        <div class="col-50">
+                            <p>Bruit : </p>
+                            
+                        </div>
+                        <div class="col-50">
+                            <image  src="ressources/bruit.png">
+                        </div>
+                            
+                    </div>
+                </section>
+                <section>
+                    <p>
+                    Pour comprendre comment se forme un son complexe, penchons-nous sur <b> l'analyse spectrale </b> du son de guitare :</p>
+                    </p>
+                    <div class="row no-margin-top">
+                        <div class="col-50">
+                            <p class = "fragment" data-fragment-index="2"> Un spectre est un graphique reprenant le contenu en fréquence d'un son.</p>
+                            <p class="fragment" data-fragment-index="4">Dans ce cas, nous constatons que ce son complexe est l'addition de plusieurs sons simples de fréquences multiples les unes des autres</p>
+                            <p class="fragment" data-fragment-index="6">La composante à la fréquence la plus faible déterminera la note jouée et se nommera <b> fondamentale</b></p>
+                            <p class="fragment" data-fragment-index="8">Les autres composantes détermineront la richesse du son, son timbre. Nous les nommerons <b> harmoniques</b></p>
+                            <p class="fragment" data-fragment-index="9">Il apparaît donc que la somme de ces sons simples doit donner le son du piano ! </p>
+                        </div>
+                        <div class="col-50">
+                            
+                            <div  data-svg-fragment="ressources/fondamentale_harmoniques.svg#[*|label=base]">
+						  		<a class="fragment" data-fragment-index="1" title="[*|label=fragment1]"></a>
+								<a class="fragment" data-fragment-index="3" title="[*|label=fragment2]"></a>
+								<a class="fragment" data-fragment-index="5" title="[*|label=fragment3]"></a>
+								<a class="fragment" data-fragment-index="7" title="[*|label=fragment4]"></a>
+								
+							</div>
+                            
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p>
+                        Dans le cas du bruit, le spectre ne présente pas cette strucuture : le bruit est un mélange de sons simples de toutes fréquences et de toutes amplitudes.
+                    </p>
+                    <image  src="ressources/Spectre_bruit-précis.png">
+                
+                </section>
+                <section>
+                    <h4> Former un son complexe (synthèse additive) : Essayez ...</h4>
+                </section>
+                <section>
+                    <div class="fig-container no-margin-top" data-file="ressources/additif/index.html"></div>
+                </section>
+                
 			</div>
 
 		</div>
